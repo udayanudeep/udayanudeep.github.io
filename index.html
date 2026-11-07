@@ -26,7 +26,8 @@ em{font-family:var(--serif);font-style:italic;font-weight:400}
 @keyframes grain{25%{transform:translate(-3%,2%)}50%{transform:translate(2%,-3%)}75%{transform:translate(-2%,-1%)}}
 
 nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:40;display:flex;align-items:center;gap:4px;padding:6px;border-radius:999px;background:color-mix(in srgb,var(--bg2) 80%,transparent);border:1px solid var(--line);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);max-width:calc(100% - 24px)}
-nav .mono{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--acc);color:var(--ink);font-weight:700;font-size:.8rem;text-decoration:none;flex:none}
+nav .mono{display:flex;align-items:center;gap:8px;padding:0 12px 0 4px;height:34px;font-weight:600;font-size:.9rem;letter-spacing:-.01em;text-decoration:none;white-space:nowrap;flex:none}
+nav .mono img{width:28px;height:28px;border-radius:50%;object-fit:cover;object-position:50% 22%;border:2px solid var(--acc)}
 nav .lk{font-size:.86rem;text-decoration:none;color:var(--muted);padding:7px 13px;border-radius:999px;transition:.25s;white-space:nowrap}
 nav .lk:hover,nav .lk.on{color:var(--fg);background:var(--card)}
 nav .hi{font-size:.86rem;font-weight:600;text-decoration:none;padding:7px 15px;border-radius:999px;background:var(--fg);color:var(--bg);white-space:nowrap;transition:.25s}
@@ -43,8 +44,10 @@ nav .hi:hover{background:var(--acc);color:var(--ink)}
 .kicker{font-family:var(--mono);font-size:.78rem;color:var(--muted);letter-spacing:.04em;display:flex;align-items:center;gap:10px}
 .kicker .live{width:8px;height:8px;border-radius:50%;background:var(--acc);animation:ping 2s infinite}
 @keyframes ping{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--acc) 60%,transparent)}100%{box-shadow:0 0 0 12px transparent}}
-.hero h1{font-size:clamp(2.8rem,7.2vw,6rem);line-height:.98;letter-spacing:-.045em;font-weight:600;margin:22px 0 26px}
-.hero h1 em{color:var(--acc);font-size:1.08em;letter-spacing:-.02em}
+.hero h1{font-size:clamp(3.2rem,9vw,7.4rem);line-height:.92;letter-spacing:-.055em;font-weight:600;margin:18px 0 18px}
+.hero h1 em{color:var(--acc);font-size:1.06em;letter-spacing:-.02em}
+.motto{font-size:clamp(1.4rem,3vw,2.2rem);line-height:1.15;letter-spacing:-.03em;font-weight:500;margin:0 0 18px;opacity:0;animation:fade 1s .75s forwards}
+.motto em{color:var(--acc)}
 .hero h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em}
 .hero h1 .w>span{display:inline-block;transform:translateY(105%);animation:rise .9s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i)*70ms + .2s)}
 @keyframes rise{to{transform:none}}
@@ -63,9 +66,11 @@ nav .hi:hover{background:var(--acc);color:var(--ink)}
 @keyframes pop{from{opacity:0;transform:scale(.85) rotate(-8deg)}to{opacity:1;transform:none}}
 .portrait .ring{position:absolute;inset:0;animation:turn 26s linear infinite}
 .portrait .ring text{font-family:var(--mono);font-size:10.5px;letter-spacing:3.4px;fill:var(--muted);text-transform:uppercase}
-.portrait .face{position:absolute;inset:16%;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 30% 25%,color-mix(in srgb,var(--acc) 35%,var(--card)),var(--card) 70%);border:1px solid var(--line);overflow:hidden;transition:transform .5s}
-.portrait:hover .face{transform:scale(1.04)}
-.portrait .face span{font-family:var(--serif);font-size:clamp(4rem,11vw,7rem);font-style:italic;line-height:1;color:var(--fg)}
+.portrait .face{position:absolute;inset:13%;border-radius:50%;background:var(--acc);padding:6px;transition:transform .5s;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.portrait .face img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 18%;display:block;filter:saturate(.95);transition:transform .6s}
+.portrait:hover .face{transform:scale(1.04) rotate(-2deg)}
+.portrait:hover .face img{transform:scale(1.06)}
+.portrait .face::after{content:"";position:absolute;inset:6px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
 .portrait .sticker{position:absolute;right:2%;bottom:10%;padding:8px 14px;border-radius:12px;background:var(--acc2);color:#1a0b04;font-weight:700;font-size:.8rem;transform:rotate(-8deg);box-shadow:0 10px 25px -10px var(--acc2);animation:bob 4s ease-in-out infinite}
 .portrait .sticker2{position:absolute;left:0;top:14%;padding:8px 14px;border-radius:12px;background:var(--acc3);color:#06122b;font-weight:700;font-size:.8rem;transform:rotate(7deg);animation:bob 4.6s ease-in-out infinite reverse}
 @keyframes bob{50%{translate:0 -10px}}
@@ -167,6 +172,17 @@ h2 em{color:var(--acc)}
 .mail:hover .ch2{transform:translateY(-4px);color:var(--acc)}
 .row{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:34px}
 .copy{font-family:var(--sans);font-size:.95rem;font-weight:600;cursor:pointer;background:transparent;color:var(--fg)}
+.resumes{max-width:900px;margin:70px auto 0;text-align:left}
+.resumes h3{font-family:var(--mono);font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:400;margin:0 0 14px;text-align:center}
+.rgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.rcard{display:flex;flex-direction:column;justify-content:space-between;gap:26px;min-height:150px;padding:18px;border-radius:18px;background:var(--card);border:1px solid var(--line);text-decoration:none;position:relative;overflow:hidden;transition:transform .4s cubic-bezier(.2,.8,.2,1),border-color .4s,background .4s,color .4s}
+.rcard .ty{font-family:var(--mono);font-size:.7rem;color:var(--muted);transition:color .4s}
+.rcard b{font-size:1.1rem;font-weight:600;letter-spacing:-.02em;line-height:1.2}
+.rcard .dl{display:flex;justify-content:space-between;align-items:center;font-size:.82rem;color:var(--muted);transition:color .4s}
+.rcard .dl i{font-style:normal;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);transition:transform .4s,background .4s,border-color .4s}
+.rcard:hover{transform:translateY(-6px) rotate(-1deg);background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.rcard:hover .ty,.rcard:hover .dl{color:color-mix(in srgb,var(--bg) 70%,transparent)}
+.rcard:hover .dl i{background:var(--acc);border-color:var(--acc);color:var(--ink);transform:translateY(3px)}
 .socials{display:flex;justify-content:center;gap:26px;margin-top:40px;font-family:var(--mono);font-size:.82rem}
 .socials a{text-decoration:none;color:var(--muted);transition:color .3s}
 .socials a:hover{color:var(--acc)}
@@ -186,6 +202,7 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;border
   .t-bio,.t-now,.t-open,.t-cert{grid-column:span 2}.t-clock,.t-years{grid-column:span 1}
   .chapters{grid-template-columns:repeat(2,1fr)}
   .pr{grid-template-columns:50px 1fr}.pr p{grid-column:2}
+  .rgrid{grid-template-columns:repeat(2,1fr)}
   nav .lk.opt{display:none}
 }
 @media (max-width:520px){.bento{grid-template-columns:1fr}.t-clock,.t-years{grid-column:span 1}.t-bio,.t-now,.t-open,.t-cert{grid-column:span 1}.chapters{grid-template-columns:1fr}nav .lk{display:none}.big{font-size:3.4rem}}
@@ -195,7 +212,7 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;border
 <div class="grain"></div><div class="cursor" id="cur"></div>
 
 <nav>
-  <a class="mono" href="#top" aria-label="Home">UA</a>
+  <a class="mono" href="#top"><img src="photo.jpg" alt="">Udaya Anudeep</a>
   <a class="lk" href="#about">About</a>
   <a class="lk" href="#journey">Journey</a>
   <a class="lk opt" href="#values">How I work</a>
@@ -207,18 +224,19 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;border
 <header class="hero">
   <div class="aura"></div>
   <div>
-    <div class="kicker"><i class="live"></i> Udaya Anudeep &middot; DevOps engineer &middot; Hyderabad</div>
-    <h1 id="hl">I make release day feel like <em>just another day.</em></h1>
+    <div class="kicker"><i class="live"></i> Hi, I'm &middot; Senior DevOps engineer &middot; Hyderabad</div>
+    <h1 id="hl">Udaya <em>Anudeep</em></h1>
+    <p class="motto">I make release day feel like <em>just another day.</em></p>
     <p class="intro">I'm a DevOps engineer with <b>7+ years</b> of keeping big enterprise platforms shipping. I build pipelines, automate the repetitive work, and stay calm when production isn't.</p>
     <div class="acts">
       <a class="pill solid" href="mailto:muvsanudeep@gmail.com?subject=Hello%20Udaya">Say hello <span class="arr">&rarr;</span></a>
       <a class="pill ghost" href="#journey">See my journey</a>
     </div>
   </div>
-  <div class="portrait" aria-hidden="true">
+  <div class="portrait">
     <svg class="ring" viewBox="0 0 200 200"><defs><path id="circ" d="M100,100 m-88,0 a88,88 0 1,1 176,0 a88,88 0 1,1 -176,0"/></defs>
       <text><textPath href="#circ">DevOps engineer &#8226; Pipelines &#8226; Cloud &#8226; Automation &#8226; Observability &#8226;</textPath></text></svg>
-    <div class="face"><span>ua</span></div>
+    <div class="face"><img src="photo.jpg" alt="Photo of Udaya Anudeep" width="800" height="1024"></div>
     <div class="sticker">AZ-400 certified</div>
     <div class="sticker2">Open to work</div>
   </div>
@@ -322,7 +340,15 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;border
   <div class="socials rv">
     <a href="https://linkedin.com/in/anudeep-udaya" target="_blank" rel="noopener">LinkedIn &nearr;</a>
     <a href="https://github.com/udayanudeep" target="_blank" rel="noopener">GitHub &nearr;</a>
-    <a href="Udaya_Anudeep_DevOps_Resume_Tailored.pdf" download>Resume (PDF) &darr;</a>
+  </div>
+  <div class="resumes">
+    <h3 class="rv">Grab the resume that fits your role</h3>
+    <div class="rgrid">
+      <a class="rcard rv" href="resumes/Udaya_Anudeep_Senior_DevOps_Engineer_Resume.pdf" download><span class="ty">PDF &middot; 01</span><b>Senior DevOps Engineer</b><span class="dl">Download <i>&darr;</i></span></a>
+      <a class="rcard rv" style="--d:.06s" href="resumes/Udaya_Anudeep_DevOps_Engineer_Resume.pdf" download><span class="ty">PDF &middot; 02</span><b>DevOps Engineer</b><span class="dl">Download <i>&darr;</i></span></a>
+      <a class="rcard rv" style="--d:.12s" href="resumes/Udaya_Anudeep_SRE_Resume.pdf" download><span class="ty">PDF &middot; 03</span><b>Site Reliability Engineer</b><span class="dl">Download <i>&darr;</i></span></a>
+      <a class="rcard rv" style="--d:.18s" href="resumes/Udaya_Anudeep_Middleware_DevOps_Engineer_Resume.pdf" download><span class="ty">PDF &middot; 04</span><b>Middleware &amp; DevOps Engineer</b><span class="dl">Download <i>&darr;</i></span></a>
+    </div>
   </div>
 </section>
 <footer><span>&copy; <span id="yr">2026</span> Udaya Anudeep</span><span>Made by hand in Hyderabad</span></footer>
