@@ -3,176 +3,205 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Udaya Anudeep - DevOps Engineer</title>
-<meta name="description" content="DevOps Engineer with 7+ years in CI/CD automation, cloud, containers and observability. Microsoft AZ-400 and AZ-104 certified.">
-<meta name="theme-color" content="#0b1020">
+<meta name="description" content="DevOps Engineer with 7+ years in CI/CD automation, cloud, containers and observability. Microsoft AZ-400 and AZ-104 certified. Contact: muvsanudeep@gmail.com">
+<meta name="theme-color" content="#070b14">
 <style>
-:root {
-  --bg:#0b1020; --bg2:#101733; --fg:#e8ecf8; --muted:#9aa4c4; --line:rgba(255,255,255,.09);
-  --card:rgba(255,255,255,.04); --card-h:rgba(255,255,255,.07);
-  --a1:#38bdf8; --a2:#818cf8; --a3:#34d399; --grad:linear-gradient(120deg,var(--a1),var(--a2) 55%,var(--a3));
-  --shadow:0 20px 50px -20px rgba(0,0,0,.6);
+:root{
+  --bg:#070b14;--panel:#0d1424;--panel2:#111a2e;--fg:#e6edf7;--muted:#8a97b2;--line:rgba(148,163,184,.14);
+  --g:#22d3a0;--c:#38bdf8;--v:#a78bfa;--o:#fbbf24;--r:#fb7185;
+  --mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
 }
-:root[data-theme="light"] {
-  --bg:#f6f8ff; --bg2:#eaefff; --fg:#10162f; --muted:#5a6486; --line:rgba(16,22,47,.1);
-  --card:rgba(255,255,255,.75); --card-h:#fff; --a1:#0284c7; --a2:#4f46e5; --a3:#059669;
-  --shadow:0 20px 40px -22px rgba(30,40,100,.35);
-}
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) {
-    --bg:#f6f8ff; --bg2:#eaefff; --fg:#10162f; --muted:#5a6486; --line:rgba(16,22,47,.1);
-    --card:rgba(255,255,255,.75); --card-h:#fff; --a1:#0284c7; --a2:#4f46e5; --a3:#059669;
-    --shadow:0 20px 40px -22px rgba(30,40,100,.35);
-  }
-}
+:root[data-theme="light"]{--bg:#f4f7fc;--panel:#fff;--panel2:#eef2fa;--fg:#0f172a;--muted:#5b6784;--line:rgba(15,23,42,.12);--g:#059669;--c:#0369a1;--v:#6d28d9;--o:#b45309;--r:#be123c}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f4f7fc;--panel:#fff;--panel2:#eef2fa;--fg:#0f172a;--muted:#5b6784;--line:rgba(15,23,42,.12);--g:#059669;--c:#0369a1;--v:#6d28d9;--o:#b45309;--r:#be123c}}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 "Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:hidden;transition:background .4s,color .4s}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 var(--sans);overflow-x:hidden;transition:background .4s,color .4s}
 a{color:inherit}
-.bg{position:fixed;inset:0;z-index:-1;overflow:hidden;background:radial-gradient(1200px 600px at 80% -10%,var(--bg2),transparent),var(--bg)}
-.blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.35;animation:float 18s ease-in-out infinite}
-.blob.b1{width:420px;height:420px;background:var(--a1);top:-120px;left:-100px}
-.blob.b2{width:480px;height:480px;background:var(--a2);top:30%;right:-160px;animation-delay:-6s}
-.blob.b3{width:380px;height:380px;background:var(--a3);bottom:-140px;left:25%;animation-delay:-11s;opacity:.22}
-@keyframes float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(50px,40px) scale(1.08)}66%{transform:translate(-30px,60px) scale(.95)}}
-.bg::after{content:"";position:absolute;inset:0;background-image:radial-gradient(var(--line) 1px,transparent 1px);background-size:28px 28px;mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%)}
+::selection{background:var(--g);color:#04130d}
+.grid-bg{position:fixed;inset:0;z-index:-1;background:
+  radial-gradient(700px 400px at 15% 0%,color-mix(in srgb,var(--c) 18%,transparent),transparent),
+  radial-gradient(600px 400px at 90% 30%,color-mix(in srgb,var(--v) 16%,transparent),transparent),
+  linear-gradient(var(--line) 1px,transparent 1px) 0 0/48px 48px,
+  linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/48px 48px;
+  mask-image:linear-gradient(#000 40%,transparent 100%);animation:drift 40s linear infinite}
+@keyframes drift{to{background-position:0 0,0 0,0 48px,48px 0}}
 
-nav{position:sticky;top:0;z-index:10;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 70%,transparent);border-bottom:1px solid var(--line)}
-.nav-in{max-width:980px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.logo{font-weight:800;letter-spacing:-.02em;text-decoration:none;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.menu{display:flex;gap:4px;align-items:center;overflow-x:auto;scrollbar-width:none}
+nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 72%,transparent);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1040px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:14px}
+.logo{font-family:var(--mono);font-weight:700;text-decoration:none;color:var(--g)}
+.logo i{color:var(--muted);font-style:normal}
+.menu{display:flex;gap:2px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
 .menu::-webkit-scrollbar{display:none}
-.menu a{text-decoration:none;color:var(--muted);font-size:.9rem;padding:6px 12px;border-radius:999px;white-space:nowrap;transition:.25s}
-.menu a:hover,.menu a.on{color:var(--fg);background:var(--card-h)}
-#theme{border:1px solid var(--line);background:var(--card);color:var(--fg);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1rem;transition:.3s;flex:none}
-#theme:hover{transform:rotate(25deg) scale(1.08)}
+.menu a{font-family:var(--mono);font-size:.8rem;text-decoration:none;color:var(--muted);padding:6px 11px;border-radius:8px;white-space:nowrap;transition:.2s}
+.menu a:hover,.menu a.on{color:var(--fg);background:var(--panel2)}
+.mailnav{font-family:var(--mono);font-size:.78rem;text-decoration:none;padding:7px 13px;border-radius:9px;background:var(--g);color:#04130d;font-weight:700;white-space:nowrap;transition:.2s}
+.mailnav:hover{transform:translateY(-2px);box-shadow:0 8px 24px -8px var(--g)}
+#theme{border:1px solid var(--line);background:var(--panel);color:var(--fg);width:34px;height:34px;border-radius:9px;cursor:pointer;flex:none;transition:.3s}
+#theme:hover{transform:rotate(30deg)}
+#bar{position:fixed;top:0;left:0;height:2px;width:0;z-index:30;background:linear-gradient(90deg,var(--g),var(--c),var(--v))}
 
-main{max-width:980px;margin:0 auto;padding:0 20px 40px}
-.hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;padding:70px 0 50px}
-.hello{display:inline-flex;align-items:center;gap:8px;width:max-content;font-size:.85rem;color:var(--muted);border:1px solid var(--line);background:var(--card);padding:6px 14px;border-radius:999px}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--a3);box-shadow:0 0 0 0 var(--a3);animation:pulse 2s infinite}
-@keyframes pulse{70%{box-shadow:0 0 0 10px transparent}100%{box-shadow:0 0 0 0 transparent}}
-h1{font-size:clamp(2.6rem,8vw,5rem);line-height:1.02;letter-spacing:-.04em;margin:20px 0 10px;font-weight:800}
-h1 .g{background:var(--grad);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
-@keyframes shine{to{background-position:200% center}}
-.role{font-size:clamp(1.1rem,2.6vw,1.5rem);color:var(--muted);min-height:2em}
-.role b{color:var(--fg);font-weight:600}
-.cursor{display:inline-block;width:2px;height:1.1em;background:var(--a1);margin-left:3px;vertical-align:-.15em;animation:blink 1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
-.lead{max-width:620px;color:var(--muted);margin:14px 0 26px}
+main{max-width:1040px;margin:0 auto;padding:0 20px}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;min-height:90vh;padding:60px 0}
+.status{display:inline-flex;gap:9px;align-items:center;font-family:var(--mono);font-size:.78rem;color:var(--g);border:1px solid color-mix(in srgb,var(--g) 40%,transparent);background:color-mix(in srgb,var(--g) 9%,transparent);padding:5px 13px;border-radius:999px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--g);animation:ping 1.8s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--g) 70%,transparent)}100%{box-shadow:0 0 0 10px transparent}}
+h1{font-size:clamp(2.7rem,7vw,4.6rem);line-height:1;letter-spacing:-.045em;margin:18px 0 12px;font-weight:800}
+h1 .g{background:linear-gradient(100deg,var(--g),var(--c),var(--v),var(--g));background-size:250% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite}
+@keyframes shine{to{background-position:250% center}}
+.tag{font-family:var(--mono);color:var(--muted);font-size:1rem}
+.tag b{color:var(--c);font-weight:600}
+.lead{color:var(--muted);max-width:520px;margin:14px 0 24px}
 .cta{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:12px;text-decoration:none;font-weight:600;font-size:.95rem;border:1px solid var(--line);background:var(--card);transition:transform .25s,box-shadow .25s,background .25s}
-.btn:hover{transform:translateY(-3px);background:var(--card-h);box-shadow:var(--shadow)}
-.btn.p{background:var(--grad);color:#06101f;border:0}
-.btn.p:hover{filter:brightness(1.08)}
-.scroll{margin-top:44px;width:24px;height:38px;border:2px solid var(--muted);border-radius:14px;position:relative;opacity:.6}
-.scroll::after{content:"";position:absolute;left:50%;top:7px;width:4px;height:7px;margin-left:-2px;border-radius:2px;background:var(--muted);animation:wheel 1.6s infinite}
-@keyframes wheel{0%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(14px)}}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 20px;border-radius:12px;font-weight:600;font-size:.92rem;text-decoration:none;border:1px solid var(--line);background:var(--panel);cursor:pointer;color:var(--fg);font-family:inherit;transition:transform .25s,box-shadow .25s,border-color .25s}
+.btn:hover{transform:translateY(-3px);border-color:var(--c);box-shadow:0 12px 30px -12px var(--c)}
+.btn.p{background:linear-gradient(120deg,var(--g),var(--c));color:#04130d;border:0}
+.btn.p:hover{box-shadow:0 12px 30px -10px var(--g)}
 
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:10px 0 30px}
-.stat{padding:22px;border-radius:18px;background:var(--card);border:1px solid var(--line);transition:transform .3s,background .3s}
-.stat:hover{transform:translateY(-6px);background:var(--card-h)}
-.stat b{display:block;font-size:2.4rem;line-height:1.1;letter-spacing:-.03em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.stat span{color:var(--muted);font-size:.9rem}
+.term{border:1px solid var(--line);border-radius:16px;background:var(--panel);box-shadow:0 30px 70px -30px rgba(0,0,0,.7);overflow:hidden;transform:perspective(1200px) rotateY(-5deg) rotateX(2deg);transition:transform .5s}
+.term:hover{transform:none}
+.tbar{display:flex;align-items:center;gap:7px;padding:11px 14px;background:var(--panel2);border-bottom:1px solid var(--line)}
+.tbar i{width:11px;height:11px;border-radius:50%}
+.tbar i:nth-child(1){background:#fb7185}.tbar i:nth-child(2){background:#fbbf24}.tbar i:nth-child(3){background:#22d3a0}
+.tbar span{margin-left:8px;font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+.tbody{padding:18px;font-family:var(--mono);font-size:.82rem;line-height:1.75;min-height:290px}
+.tbody .ln{opacity:0;animation:show .01s forwards;white-space:pre-wrap;word-break:break-word}
+@keyframes show{to{opacity:1}}
+.pr{color:var(--g)}.k{color:var(--c)}.v{color:var(--v)}.m{color:var(--muted)}.ok{color:var(--g)}.w{color:var(--o)}
+.caret{display:inline-block;width:8px;height:1em;background:var(--g);vertical-align:-.15em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
 
-section{padding:56px 0 8px}
-.eyebrow{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--a1);font-weight:700}
-h2{font-size:clamp(1.7rem,4vw,2.4rem);letter-spacing:-.03em;margin:6px 0 28px}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-bottom:20px}
+.metric{padding:20px;border-radius:16px;background:var(--panel);border:1px solid var(--line);position:relative;overflow:hidden;transition:transform .3s,border-color .3s}
+.metric:hover{transform:translateY(-6px);border-color:var(--g)}
+.metric b{font-size:2.3rem;line-height:1.1;letter-spacing:-.03em;font-family:var(--mono);color:var(--g)}
+.metric span{display:block;color:var(--muted);font-size:.86rem;margin-top:2px}
+.metric::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:100%;background:linear-gradient(90deg,var(--g),var(--c));transform:scaleX(0);transform-origin:left;transition:transform 1.4s .2s}
+.metric.in::after{transform:scaleX(1)}
 
-.timeline{position:relative;padding-left:30px}
-.timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--a1),var(--a2),transparent)}
-.job{position:relative;margin-bottom:22px;padding:22px;border-radius:18px;background:var(--card);border:1px solid var(--line);transition:transform .3s,background .3s,box-shadow .3s}
-.job:hover{transform:translateX(6px);background:var(--card-h);box-shadow:var(--shadow)}
-.job::before{content:"";position:absolute;left:-30px;top:28px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--a1);box-shadow:0 0 0 4px color-mix(in srgb,var(--a1) 20%,transparent)}
-.job h3{margin:0;font-size:1.1rem}
-.job .co{color:var(--a2);font-weight:600;font-size:.95rem}
-.meta{color:var(--muted);font-size:.85rem;margin:2px 0 8px}
-.job ul,.proj ul{margin:8px 0 0;padding-left:18px;color:var(--muted)}
-.job li,.proj li{margin:6px 0}
-.job li::marker,.proj li::marker{color:var(--a1)}
-.now{font-size:.7rem;font-weight:700;color:var(--a3);border:1px solid var(--a3);border-radius:999px;padding:1px 9px;margin-left:8px;vertical-align:middle}
+section{padding:64px 0 6px}
+.eyebrow{font-family:var(--mono);font-size:.8rem;color:var(--g)}
+.eyebrow::before{content:"~/ "}
+h2{font-size:clamp(1.7rem,4vw,2.5rem);letter-spacing:-.035em;margin:6px 0 30px}
 
-.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
-.proj{padding:24px;border-radius:18px;background:var(--card);border:1px solid var(--line);position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s}
-.proj::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .5s}
-.proj:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.pipe{position:relative;padding-left:44px}
+.pipe::before{content:"";position:absolute;left:14px;top:8px;bottom:8px;width:2px;background:repeating-linear-gradient(var(--g) 0 8px,transparent 8px 16px);animation:flow 1.2s linear infinite;opacity:.7}
+@keyframes flow{to{background-position:0 16px}}
+.stage{position:relative;margin-bottom:20px;padding:22px;border-radius:16px;background:var(--panel);border:1px solid var(--line);transition:transform .3s,border-color .3s,box-shadow .3s}
+.stage:hover{transform:translateX(8px);border-color:var(--c);box-shadow:0 18px 40px -22px var(--c)}
+.stage::before{content:"\2713";position:absolute;left:-44px;top:20px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:.8rem;font-weight:800;background:var(--bg);color:var(--g);border:2px solid var(--g)}
+.stage.run::before{content:"\25B6";color:var(--o);border-color:var(--o);animation:spin 2.4s ease-in-out infinite}
+@keyframes spin{50%{box-shadow:0 0 0 8px color-mix(in srgb,var(--o) 22%,transparent)}}
+.sh{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px 14px;align-items:baseline}
+.stage h3{margin:0;font-size:1.08rem}
+.when{font-family:var(--mono);font-size:.76rem;color:var(--muted)}
+.co{color:var(--c);font-family:var(--mono);font-size:.82rem;margin:2px 0 6px}
+.badge{font-family:var(--mono);font-size:.68rem;padding:2px 9px;border-radius:999px;margin-left:8px;vertical-align:middle;color:var(--o);border:1px solid var(--o)}
+.stage ul,.proj ul{margin:8px 0 0;padding-left:18px;color:var(--muted)}
+.stage li,.proj li{margin:6px 0}
+.stage li::marker,.proj li::marker{color:var(--g)}
+
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:16px}
+.proj{padding:24px;border-radius:16px;background:var(--panel);border:1px solid var(--line);position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.proj::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,var(--g),var(--c),var(--v));transform:scaleX(0);transform-origin:left;transition:transform .5s}
+.proj:hover{transform:translateY(-6px);box-shadow:0 24px 50px -28px var(--v)}
 .proj:hover::before{transform:scaleX(1)}
-.proj h3{margin:0 0 2px;font-size:1.1rem}
+.proj h3{margin:0;font-size:1.08rem}
+.proj .when{display:block;margin:2px 0 4px}
 
-.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
-.sk{padding:20px;border-radius:18px;background:var(--card);border:1px solid var(--line)}
-.sk h3{margin:0 0 12px;font-size:.95rem;color:var(--muted);font-weight:600}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.sk{padding:20px;border-radius:16px;background:var(--panel);border:1px solid var(--line)}
+.sk h3{margin:0 0 12px;font-family:var(--mono);font-size:.82rem;color:var(--v);font-weight:600}
+.sk h3::before{content:"$ "; color:var(--muted)}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips span{padding:5px 13px;border-radius:999px;font-size:.85rem;border:1px solid var(--line);background:var(--card);transition:transform .2s,background .2s,border-color .2s,color .2s;cursor:default}
-.chips span:hover{transform:translateY(-3px) scale(1.05);background:var(--grad);color:#06101f;border-color:transparent}
+.chips span{font-family:var(--mono);font-size:.78rem;padding:5px 12px;border-radius:8px;border:1px solid var(--line);background:var(--panel2);transition:.2s;cursor:default}
+.chips span:hover{transform:translateY(-3px) rotate(-1.5deg);background:var(--g);color:#04130d;border-color:transparent}
 
 .certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
-.cert{display:flex;gap:16px;align-items:center;padding:20px;border-radius:18px;background:var(--card);border:1px solid var(--line);transition:transform .3s,background .3s}
-.cert:hover{transform:translateY(-5px);background:var(--card-h)}
-.badge{flex:none;width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-weight:800;font-size:.8rem;background:var(--grad);color:#06101f}
-.cert b{display:block}
-.cert span{color:var(--muted);font-size:.88rem}
-.edu{margin-top:16px;padding:20px;border-radius:18px;background:var(--card);border:1px solid var(--line)}
-.edu b{display:block}.edu span{color:var(--muted);font-size:.9rem}
+.cert{display:flex;gap:16px;align-items:center;padding:20px;border-radius:16px;background:var(--panel);border:1px solid var(--line);transition:transform .3s,border-color .3s}
+.cert:hover{transform:translateY(-5px);border-color:var(--o)}
+.seal{flex:none;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-family:var(--mono);font-weight:800;font-size:.72rem;color:#1a1100;background:conic-gradient(from 0deg,var(--o),var(--g),var(--c),var(--o));position:relative}
+.seal::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--panel)}
+.seal span{position:relative;z-index:1;color:var(--fg)}
+.cert b{display:block}.cert small{color:var(--muted);font-size:.86rem}
+.edu{margin-top:16px;padding:20px;border-radius:16px;background:var(--panel);border:1px solid var(--line)}
+.edu b{display:block}.edu small{color:var(--muted)}
 
-#contact{text-align:center;padding:70px 0 20px}
-#contact h2{margin-bottom:10px}
-#contact p{color:var(--muted);max-width:520px;margin:0 auto 24px}
-#contact .cta{justify-content:center}
-footer{text-align:center;color:var(--muted);font-size:.82rem;padding:36px 0 10px}
+#contact{padding:80px 0 30px}
+.deploy{position:relative;border-radius:24px;padding:2px;background:linear-gradient(120deg,var(--g),var(--c),var(--v),var(--g));background-size:300% 300%;animation:borderflow 8s ease infinite}
+@keyframes borderflow{50%{background-position:100% 50%}}
+.deploy-in{border-radius:22px;background:var(--panel);padding:46px 30px;text-align:center;position:relative;overflow:hidden}
+.deploy-in::before{content:"";position:absolute;width:420px;height:420px;left:50%;top:-240px;margin-left:-210px;background:radial-gradient(var(--g),transparent 65%);opacity:.18}
+.deploy h2{margin:4px 0 8px;position:relative}
+.deploy p{color:var(--muted);max-width:520px;margin:0 auto 26px;position:relative}
+.mailbox{position:relative;display:inline-flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center;padding:14px 18px;border-radius:14px;background:var(--bg);border:1px dashed color-mix(in srgb,var(--g) 55%,transparent)}
+.mailbox .ic{font-size:1.4rem}
+.mailbox a.addr{font-family:var(--mono);font-size:clamp(1rem,3.6vw,1.45rem);font-weight:700;text-decoration:none;color:var(--g);transition:.2s}
+.mailbox a.addr:hover{color:var(--c)}
+.copy{font-family:var(--mono);font-size:.78rem;padding:8px 14px;border-radius:9px;border:1px solid var(--line);background:var(--panel2);color:var(--fg);cursor:pointer;transition:.2s}
+.copy:hover{border-color:var(--g);color:var(--g)}
+.deploy .cta{justify-content:center;margin-top:26px;position:relative}
+.reply{font-family:var(--mono);font-size:.76rem;color:var(--muted);margin-top:22px;position:relative}
+.reply b{color:var(--g)}
+footer{text-align:center;color:var(--muted);font-family:var(--mono);font-size:.76rem;padding:30px 0 90px}
 
-.rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.fab{position:fixed;right:18px;bottom:18px;z-index:25;display:flex;align-items:center;gap:8px;padding:12px 18px;border-radius:999px;background:linear-gradient(120deg,var(--g),var(--c));color:#04130d;font-weight:700;font-size:.88rem;text-decoration:none;box-shadow:0 14px 34px -10px var(--g);transform:translateY(90px);transition:transform .4s,box-shadow .3s}
+.fab.show{transform:none}
+.fab:hover{box-shadow:0 18px 40px -8px var(--g)}
+#toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,40px);opacity:0;z-index:40;background:var(--g);color:#04130d;font-family:var(--mono);font-size:.82rem;font-weight:700;padding:10px 18px;border-radius:10px;transition:.35s;pointer-events:none}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
 .rv.in{opacity:1;transform:none}
-.hero>*{animation:up .9s cubic-bezier(.2,.7,.2,1) both}
-.hero>*:nth-child(1){animation-delay:.05s}.hero>*:nth-child(2){animation-delay:.15s}.hero>*:nth-child(3){animation-delay:.25s}.hero>*:nth-child(4){animation-delay:.35s}.hero>*:nth-child(5){animation-delay:.45s}.hero>*:nth-child(6){animation-delay:.6s}
+.hero .l>*{animation:up .9s cubic-bezier(.2,.7,.2,1) both}
+.hero .l>*:nth-child(1){animation-delay:.05s}.hero .l>*:nth-child(2){animation-delay:.15s}.hero .l>*:nth-child(3){animation-delay:.25s}.hero .l>*:nth-child(4){animation-delay:.35s}.hero .l>*:nth-child(5){animation-delay:.45s}
 @keyframes up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
-#bar{position:fixed;top:0;left:0;height:3px;width:0;background:var(--grad);z-index:20}
 
-@media (max-width:640px){.menu a:nth-child(n+5){display:none}.job:hover{transform:none}}
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-  .rv{opacity:1;transform:none}
-}
-@media print{.bg,nav,#bar,.scroll,.cta{display:none}.rv{opacity:1;transform:none}body{background:#fff;color:#000}}
+@media (max-width:860px){.hero{grid-template-columns:1fr;min-height:auto;padding-top:40px}.term{transform:none}.menu{display:none}.nav-in{justify-content:space-between}}
+@media (max-width:520px){.stage:hover{transform:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}.tbody .ln{opacity:1}}
+@media print{.grid-bg,nav,#bar,.fab,.cta,.term{display:none}.rv{opacity:1;transform:none}body{background:#fff;color:#000}}
 </style></head><body>
-<div id="bar"></div>
-<div class="bg"><i class="blob b1"></i><i class="blob b2"></i><i class="blob b3"></i></div>
+<div id="bar"></div><div class="grid-bg"></div>
 
 <nav><div class="nav-in">
-  <a class="logo" href="#top">UA.</a>
-  <div class="menu">
-    <a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#certs">Certifications</a><a href="#contact">Contact</a>
-  </div>
+  <a class="logo" href="#top">ua<i>@</i>devops<i>:~$</i></a>
+  <div class="menu"><a href="#experience">experience</a><a href="#projects">projects</a><a href="#skills">skills</a><a href="#certs">certs</a><a href="#contact">contact</a></div>
+  <a class="mailnav" href="mailto:muvsanudeep@gmail.com">&#9993; Mail me</a>
   <button id="theme" aria-label="Toggle light and dark theme" title="Toggle theme">&#9680;</button>
 </div></nav>
 
 <main id="top">
 <header class="hero">
-  <span class="hello"><i class="dot"></i> Open to DevOps / SRE roles</span>
-  <h1>Hi, I'm <span class="g">Udaya Anudeep</span></h1>
-  <div class="role">I build <b id="type"></b><span class="cursor"></span></div>
-  <p class="lead">DevOps Engineer with 7+ years automating delivery and running production infrastructure for large enterprise platforms. Microsoft AZ-400 and AZ-104 certified, based in Hyderabad, India.</p>
-  <div class="cta">
-    <a class="btn p" href="Udaya_Anudeep_DevOps_Resume_Tailored.pdf" download>&#8681; Download resume</a>
-    <a class="btn" href="mailto:muvsanudeep@gmail.com">&#9993; Email me</a>
-    <a class="btn" href="https://linkedin.com/in/anudeep-udaya" target="_blank" rel="noopener">LinkedIn</a>
-    <a class="btn" href="https://github.com/udayanudeep" target="_blank" rel="noopener">GitHub</a>
+  <div class="l">
+    <span class="status"><i class="dot"></i> available &middot; serving notice period</span>
+    <h1>Udaya<br><span class="g">Anudeep</span></h1>
+    <div class="tag">DevOps Engineer &middot; <b>CI/CD</b> &middot; <b>Cloud</b> &middot; <b>Observability</b></div>
+    <p class="lead">7+ years automating delivery and keeping enterprise platforms reliable. I migrate pipelines, tame infrastructure and make releases boring in the best way. Microsoft AZ-400 and AZ-104 certified.</p>
+    <div class="cta">
+      <a class="btn p" href="mailto:muvsanudeep@gmail.com">&#9993; muvsanudeep@gmail.com</a>
+      <a class="btn" href="Udaya_Anudeep_DevOps_Resume_Tailored.pdf" download>&#8681; Resume PDF</a>
+    </div>
   </div>
-  <div class="scroll" aria-hidden="true"></div>
+  <div class="term rv" aria-label="Terminal summary">
+    <div class="tbar"><i></i><i></i><i></i><span>udaya@pipeline: ~</span></div>
+    <div class="tbody" id="tb"></div>
+  </div>
 </header>
 
-<div class="stats">
-  <div class="stat rv"><b data-n="100" data-s="+">0</b><span>apps migrated to GitHub Actions</span></div>
-  <div class="stat rv" style="--d:.1s"><b data-n="15000" data-s="+">0</b><span>repos on one pipeline standard</span></div>
-  <div class="stat rv" style="--d:.2s"><b data-n="80" data-s="%">0</b><span>less maintenance-window time</span></div>
-  <div class="stat rv" style="--d:.3s"><b data-n="2000" data-s="+">0</b><span>servers monitored and patched</span></div>
+<div class="metrics">
+  <div class="metric rv"><b data-n="100" data-s="+">0</b><span>apps migrated to GitHub Actions</span></div>
+  <div class="metric rv" style="--d:.1s"><b data-n="15000" data-s="+">0</b><span>repos on one pipeline standard</span></div>
+  <div class="metric rv" style="--d:.2s"><b data-n="80" data-s="%">0</b><span>less maintenance-window time</span></div>
+  <div class="metric rv" style="--d:.3s"><b data-n="2000" data-s="+">0</b><span>servers monitored and patched</span></div>
 </div>
 
 <section id="experience">
-  <div class="eyebrow rv">Career</div><h2 class="rv">Experience</h2>
-  <div class="timeline">
-    <article class="job rv">
-      <h3>IT Analyst, DevOps &amp; Middleware Engineer <span class="now">NOW</span></h3>
-      <div class="co">Tata Consultancy Services</div><div class="meta">Dec 2025 - Present &middot; Hyderabad, India</div>
+  <div class="eyebrow rv">experience</div><h2 class="rv">Career pipeline</h2>
+  <div class="pipe">
+    <article class="stage run rv">
+      <div class="sh"><h3>IT Analyst, DevOps &amp; Middleware Engineer<span class="badge">RUNNING</span></h3><span class="when">Dec 2025 - Present &middot; Hyderabad</span></div>
+      <div class="co">Tata Consultancy Services</div>
       <ul>
         <li>Migrated 100+ applications from Bamboo to GitHub Actions with reusable workflows and security scanning, standardizing delivery across 15,000+ repositories.</li>
         <li>Run self-hosted GitHub Actions runners on RHEL, Windows and cloud with disk clean-up automation, keeping pipelines available for client deadlines.</li>
@@ -181,128 +210,139 @@ footer{text-align:center;color:var(--muted);font-size:.82rem;padding:36px 0 10px
         <li>Patched WebLogic, Tomcat and JDK across 2,000+ servers, tuned JVM and JDBC pools, and automated TLS rollout with Venafi.</li>
       </ul>
     </article>
-    <article class="job rv">
-      <h3>IT Analyst, Team Lead</h3>
-      <div class="co">Tata Consultancy Services</div><div class="meta">Sep 2024 - Dec 2025 &middot; Guadalajara, Mexico</div>
+    <article class="stage rv">
+      <div class="sh"><h3>IT Analyst, Team Lead</h3><span class="when">Sep 2024 - Dec 2025 &middot; Guadalajara, Mexico</span></div>
+      <div class="co">Tata Consultancy Services</div>
       <ul>
         <li>Led a 14-member nearshore team supporting 500+ developers on Nexus, SonarQube and Bitbucket.</li>
         <li>Built Bamboo pipelines and Docker Swarm hosting; automated Venafi certificate installs with Shell and Ansible.</li>
         <li>Built a Power BI inventory dashboard; resolved F5, DNS and firewall issues with OS, VMware and network teams.</li>
       </ul>
     </article>
-    <article class="job rv">
-      <h3>Middleware and DevOps Administrator</h3>
-      <div class="co">Tata Consultancy Services</div><div class="meta">Dec 2021 - Sep 2024 &middot; Guadalajara, Mexico</div>
+    <article class="stage rv">
+      <div class="sh"><h3>Middleware and DevOps Administrator</h3><span class="when">Dec 2021 - Sep 2024 &middot; Guadalajara, Mexico</span></div>
+      <div class="co">Tata Consultancy Services</div>
       <ul><li>Maintained Bamboo, Docker, Bitbucket, Nexus, SonarQube, WebLogic, Tomcat, SOA and WebSphere; ran ServiceNow incident, change, problem and CMDB processes.</li></ul>
     </article>
-    <article class="job rv">
-      <h3>System Engineer, Middleware Administrator</h3>
-      <div class="co">Tata Consultancy Services</div><div class="meta">Jun 2019 - Dec 2021 &middot; Hyderabad, India</div>
+    <article class="stage rv">
+      <div class="sh"><h3>System Engineer, Middleware Administrator</h3><span class="when">Jun 2019 - Dec 2021 &middot; Hyderabad</span></div>
+      <div class="co">Tata Consultancy Services</div>
       <ul><li>Administered WebLogic, Tomcat, SOA/OSB and WebSphere for 150+ Java applications; monitored with APM, SiteScope and Splunk and mentored juniors.</li></ul>
     </article>
   </div>
 </section>
 
 <section id="projects">
-  <div class="eyebrow rv">Selected work</div><h2 class="rv">Key projects</h2>
-  <div class="grid2">
-    <article class="proj rv">
-      <h3>Bamboo to GitHub Actions migration</h3><div class="meta">Northern Trust &middot; 2025 - Present</div>
-      <ul><li>Replaced legacy Atlassian CI/CD for 100+ applications with reusable, security-integrated workflows and self-hosted runners, giving one standard pipeline model.</li></ul>
-    </article>
-    <article class="proj rv" style="--d:.12s">
-      <h3>Repository archival automation</h3><div class="meta">ServiceNow + GitHub EMU &middot; 2025 - Present</div>
-      <ul><li>Designed a catalog request and approval workflow with CMDB integration to archive and delete repositories, replacing manual requests with an audited self-service process.</li></ul>
-    </article>
+  <div class="eyebrow rv">projects</div><h2 class="rv">Shipped work</h2>
+  <div class="two">
+    <article class="proj rv"><h3>Bamboo to GitHub Actions migration</h3><span class="when">Northern Trust &middot; 2025 - Present</span>
+      <ul><li>Replaced legacy Atlassian CI/CD for 100+ applications with reusable, security-integrated workflows and self-hosted runners, giving one standard pipeline model.</li></ul></article>
+    <article class="proj rv" style="--d:.12s"><h3>Repository archival automation</h3><span class="when">ServiceNow + GitHub EMU &middot; 2025 - Present</span>
+      <ul><li>Designed a catalog request and approval workflow with CMDB integration to archive and delete repositories, replacing manual requests with an audited self-service process.</li></ul></article>
   </div>
 </section>
 
 <section id="skills">
-  <div class="eyebrow rv">Toolbox</div><h2 class="rv">Skills</h2>
+  <div class="eyebrow rv">skills</div><h2 class="rv">Toolbox</h2>
   <div class="skills">
-    <div class="sk rv"><h3>CI/CD &amp; SCM</h3><div class="chips"><span>GitHub Actions</span><span>GitHub Enterprise (EMU)</span><span>Azure DevOps</span><span>Jenkins</span><span>Bamboo</span><span>Bitbucket</span><span>Git</span><span>Nexus</span><span>SonarQube</span></div></div>
-    <div class="sk rv" style="--d:.08s"><h3>Cloud &amp; IaC</h3><div class="chips"><span>Microsoft Azure</span><span>Terraform</span><span>Ansible</span><span>Shell/Bash</span><span>Python</span><span>ServiceNow</span></div></div>
-    <div class="sk rv"><h3>Containers</h3><div class="chips"><span>Docker</span><span>Docker Swarm</span><span>Podman</span><span>Kubernetes</span></div></div>
-    <div class="sk rv" style="--d:.08s"><h3>Monitoring &amp; observability</h3><div class="chips"><span>Datadog</span><span>Dynatrace</span><span>Prometheus</span><span>Splunk</span><span>ELK</span><span>Power BI</span></div></div>
-    <div class="sk rv"><h3>Middleware &amp; messaging</h3><div class="chips"><span>WebLogic</span><span>Tomcat</span><span>WebSphere</span><span>Oracle SOA/OSB</span><span>IBM MQ</span><span>Kafka</span><span>Solace</span></div></div>
-    <div class="sk rv" style="--d:.08s"><h3>Security &amp; OS</h3><div class="chips"><span>Venafi (TLS)</span><span>Patching</span><span>Disaster recovery</span><span>RHEL/Linux</span><span>Windows</span><span>F5</span><span>Akamai</span></div></div>
+    <div class="sk rv"><h3>ci-cd --scm</h3><div class="chips"><span>GitHub Actions</span><span>GitHub Enterprise (EMU)</span><span>Azure DevOps</span><span>Jenkins</span><span>Bamboo</span><span>Bitbucket</span><span>Git</span><span>Nexus</span><span>SonarQube</span></div></div>
+    <div class="sk rv" style="--d:.08s"><h3>cloud --iac</h3><div class="chips"><span>Microsoft Azure</span><span>Terraform</span><span>Ansible</span><span>Shell/Bash</span><span>Python</span><span>ServiceNow</span></div></div>
+    <div class="sk rv"><h3>containers</h3><div class="chips"><span>Docker</span><span>Docker Swarm</span><span>Podman</span><span>Kubernetes</span></div></div>
+    <div class="sk rv" style="--d:.08s"><h3>observability</h3><div class="chips"><span>Datadog</span><span>Dynatrace</span><span>Prometheus</span><span>Splunk</span><span>ELK</span><span>Power BI</span></div></div>
+    <div class="sk rv"><h3>middleware --messaging</h3><div class="chips"><span>WebLogic</span><span>Tomcat</span><span>WebSphere</span><span>Oracle SOA/OSB</span><span>IBM MQ</span><span>Kafka</span><span>Solace</span></div></div>
+    <div class="sk rv" style="--d:.08s"><h3>security --os</h3><div class="chips"><span>Venafi (TLS)</span><span>Patching</span><span>Disaster recovery</span><span>RHEL/Linux</span><span>Windows</span><span>F5</span><span>Akamai</span></div></div>
   </div>
 </section>
 
 <section id="certs">
-  <div class="eyebrow rv">Credentials</div><h2 class="rv">Certifications &amp; education</h2>
+  <div class="eyebrow rv">credentials</div><h2 class="rv">Certifications &amp; education</h2>
   <div class="certs">
-    <div class="cert rv"><div class="badge">AZ-400</div><div><b>DevOps Engineer Expert</b><span>Microsoft Certified</span></div></div>
-    <div class="cert rv" style="--d:.1s"><div class="badge">AZ-104</div><div><b>Azure Administrator Associate</b><span>Microsoft Certified</span></div></div>
+    <div class="cert rv"><div class="seal"><span>AZ-400</span></div><div><b>DevOps Engineer Expert</b><small>Microsoft Certified</small></div></div>
+    <div class="cert rv" style="--d:.1s"><div class="seal"><span>AZ-104</span></div><div><b>Azure Administrator Associate</b><small>Microsoft Certified</small></div></div>
   </div>
-  <div class="edu rv"><b>B.Sc. Electrical and Electronics Engineering</b><span>VR Siddhartha Engineering College, Vijayawada &middot; April 2019</span></div>
+  <div class="edu rv"><b>B.Sc. Electrical and Electronics Engineering</b><small>VR Siddhartha Engineering College, Vijayawada &middot; April 2019</small></div>
 </section>
 
 <section id="contact">
-  <div class="eyebrow rv">Get in touch</div>
-  <h2 class="rv">Let's build something reliable</h2>
-  <p class="rv">Looking for a DevOps role where I can own pipelines, cloud and observability. Currently serving notice and open to any location.</p>
-  <div class="cta rv">
-    <a class="btn p" href="mailto:muvsanudeep@gmail.com">&#9993; muvsanudeep@gmail.com</a>
-    <a class="btn" href="https://linkedin.com/in/anudeep-udaya" target="_blank" rel="noopener">Connect on LinkedIn</a>
-  </div>
+  <div class="deploy rv"><div class="deploy-in">
+    <div class="eyebrow">contact</div>
+    <h2>Ready to deploy to your team</h2>
+    <p>Hiring for DevOps or SRE? Send me a note. I'm serving my notice period and open to any location.</p>
+    <div class="mailbox">
+      <span class="ic">&#9993;</span>
+      <a class="addr" id="addr" href="mailto:muvsanudeep@gmail.com?subject=DevOps%20opportunity">muvsanudeep@gmail.com</a>
+      <button class="copy" id="copy" type="button">copy</button>
+    </div>
+    <div class="cta">
+      <a class="btn p" href="mailto:muvsanudeep@gmail.com?subject=DevOps%20opportunity">&#9993; Send an email</a>
+      <a class="btn" href="Udaya_Anudeep_DevOps_Resume_Tailored.pdf" download>&#8681; Download resume</a>
+      <a class="btn" href="https://linkedin.com/in/anudeep-udaya" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/udayanudeep" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="reply">&gt; reply time: <b>fast</b> &middot; status: <b>200 OK</b></div>
+  </div></div>
 </section>
-<footer>&copy; <span id="yr">2026</span> Udaya Anudeep</footer>
+<footer>&copy; <span id="yr">2026</span> Udaya Anudeep &middot; built with HTML + CSS</footer>
 </main>
+
+<a class="fab" id="fab" href="mailto:muvsanudeep@gmail.com?subject=DevOps%20opportunity">&#9993; Hire me</a>
+<div id="toast">email copied</div>
 
 <script>
 (function(){
-  var root=document.documentElement;
+  var root=document.documentElement,reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
   try{var t=localStorage.getItem("theme");if(t)root.setAttribute("data-theme",t)}catch(e){}
   document.getElementById("theme").onclick=function(){
-    var dark=root.getAttribute("data-theme")?root.getAttribute("data-theme")==="dark":!matchMedia("(prefers-color-scheme: light)").matches;
-    var n=dark?"light":"dark";root.setAttribute("data-theme",n);
-    try{localStorage.setItem("theme",n)}catch(e){}
+    var cur=root.getAttribute("data-theme"),dark=cur?cur==="dark":!matchMedia("(prefers-color-scheme: light)").matches,n=dark?"light":"dark";
+    root.setAttribute("data-theme",n);try{localStorage.setItem("theme",n)}catch(e){}
   };
   document.getElementById("yr").textContent=new Date().getFullYear();
 
-  var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var toast=document.getElementById("toast");
+  document.getElementById("copy").onclick=function(){
+    var m="muvsanudeep@gmail.com";
+    function done(){toast.textContent="email copied";toast.classList.add("on");setTimeout(function(){toast.classList.remove("on")},1800)}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(m).then(done,done)}
+    else{var a=document.createElement("textarea");a.value=m;document.body.appendChild(a);a.select();try{document.execCommand("copy")}catch(e){}a.remove();done()}
+  };
 
-  var words=["CI/CD pipelines","cloud infrastructure","observability stacks","automation that scales","reliable releases"],el=document.getElementById("type");
-  if(reduce){el.textContent=words[0]}else{
-    var w=0,c=0,del=false;
-    (function tick(){
-      var s=words[w];c+=del?-1:1;el.textContent=s.slice(0,c);
-      var d=del?35:75;
-      if(!del&&c===s.length){del=true;d=1600}
-      else if(del&&c===0){del=false;w=(w+1)%words.length;d=350}
-      setTimeout(tick,d);
-    })();
+  var lines=[
+    ['<span class="pr">$</span> whoami',0],
+    ['<span class="k">udaya-anudeep</span> <span class="m">// devops engineer, 7+ yrs</span>',1],
+    ['<span class="pr">$</span> pipeline status --career',0],
+    ['<span class="ok">✓</span> build     bamboo → github actions <span class="m">(100+ apps)</span>',1],
+    ['<span class="ok">✓</span> test      sonarqube, security scans',1],
+    ['<span class="ok">✓</span> deploy    docker, kubernetes, azure',1],
+    ['<span class="ok">✓</span> observe   datadog, prometheus, elk',1],
+    ['<span class="w">▶</span> next      <span class="v">your team</span> <span class="m">(waiting for you)</span>',1],
+    ['<span class="pr">$</span> mail <span class="k">muvsanudeep@gmail.com</span><span class="caret"></span>',0]
+  ],tb=document.getElementById("tb");
+  function add(i){
+    var d=document.createElement("div");d.className="ln";d.innerHTML=lines[i][0];tb.appendChild(d);
+    var c=tb.querySelector(".caret");if(c&&i<lines.length-1)c.remove();
   }
+  if(reduce){for(var i=0;i<lines.length;i++)add(i)}
+  else{var i=0;(function n(){if(i>=lines.length)return;add(i);i++;setTimeout(n,lines[i-1][1]?260:700)})()}
 
   function count(b){
     var n=+b.dataset.n,s=b.dataset.s||"";
     if(reduce){b.textContent=n.toLocaleString()+s;return}
     var t0=performance.now();
-    (function f(t){
-      var p=Math.min((t-t0)/1600,1),e=1-Math.pow(1-p,3);
-      b.textContent=Math.round(n*e).toLocaleString()+s;
-      if(p<1)requestAnimationFrame(f);
-    })(t0);
+    (function f(t){var p=Math.min((t-t0)/1600,1),e=1-Math.pow(1-p,3);b.textContent=Math.round(n*e).toLocaleString()+s;if(p<1)requestAnimationFrame(f)})(t0);
   }
-  var io=new IntersectionObserver(function(es){
-    es.forEach(function(e){
-      if(!e.isIntersecting)return;
-      e.target.classList.add("in");
-      var b=e.target.querySelector("[data-n]");if(b)count(b);
-      io.unobserve(e.target);
-    });
-  },{threshold:.15});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(!e.isIntersecting)return;e.target.classList.add("in");
+    var b=e.target.querySelector("[data-n]");if(b)count(b);io.unobserve(e.target);
+  })},{threshold:.15});
   document.querySelectorAll(".rv").forEach(function(x){io.observe(x)});
 
-  var bar=document.getElementById("bar"),links=[].slice.call(document.querySelectorAll(".menu a"));
-  var secs=links.map(function(a){return document.querySelector(a.getAttribute("href"))});
+  var bar=document.getElementById("bar"),fab=document.getElementById("fab"),contact=document.getElementById("contact");
+  var links=[].slice.call(document.querySelectorAll(".menu a")),secs=links.map(function(a){return document.querySelector(a.getAttribute("href"))});
   addEventListener("scroll",function(){
-    var h=document.documentElement;
-    bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+"%";
-    var y=scrollY+140,cur=-1;
-    secs.forEach(function(s,i){if(s&&s.offsetTop<=y)cur=i});
+    var h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+"%";
+    var y=scrollY+150,cur=-1;secs.forEach(function(s,i){if(s&&s.offsetTop<=y)cur=i});
     links.forEach(function(a,i){a.classList.toggle("on",i===cur)});
+    fab.classList.toggle("show",scrollY>500&&scrollY+innerHeight<contact.offsetTop+120);
   },{passive:true});
 })();
 </script>
